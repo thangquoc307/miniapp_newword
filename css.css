@@ -1,0 +1,72 @@
+#display {
+    width: 500px;
+    height: 500px;
+    display: grid;
+    position: fixed;
+    margin-left: calc((100% - 500px) / 2);
+    border-radius: 20px;
+    border: black 1px solid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 1fr 150px;
+    grid-template-areas: "total total" "data data" "none pass";
+}
+#count {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    font-size: 25px;
+    grid-area: total;
+}
+#count :nth-child(1){
+    color: green;
+}
+#count :nth-child(2){
+    margin: 20px;
+}
+#count :nth-child(3){
+    color: red;
+}
+
+#data {
+    grid-area: data;
+    height: 300px;
+    font-size: 40px;
+    text-align: center;
+    justify-content: center;
+    font-weight: bolder;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+#data div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hidden {
+    background-color: black;
+    cursor: pointer;
+}
+#button-success, #button-false {
+    background-color: green;
+    width: 150px;
+    height: 50px;
+    margin: auto;
+    border-radius: 50px;
+    box-shadow: black 10px 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bolder;
+    color: white;
+}
+#button-false {
+    grid-area: none;
+    background-color: red;
+}
+#button-success {
+    grid-area: pass;
+    background-color: green;
+}
